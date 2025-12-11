@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://0.0.0.0:8020</value>
+    </property>
+
+    <!--  OSS-HDFS config  -->
+    <property>
+        <name>fs.oss.accessKeyId</name>
+        <value>YOUR_ACCESS_KEY_ID</value>
+    </property>
+
+    <property>
+        <name>fs.oss.accessKeySecret</name>
+        <value>YOUR_ACCESS_KEY_SECRET</value>
+    </property>
+
+    <property>
+        <name>fs.oss.endpoint</name>
+        <value>cn-hangzhou.oss-dls.aliyuncs.com</value>
+    </property>
+
+    <property>
+        <name>fs.oss.bucket</name>
+        <value>YOUR_BUCKET_NAME</value>
+    </property>
+
+    <!--  Gateway config  -->
+    <property>
+        <name>fs.oss.tmp.data.dirs</name>
+        <value>/tmp/jindo-gateway/tmp/data1,/tmp/jindo-gateway/tmp/data2</value>
+        <description>
+            The directory to store temporary data.
+        </description>
+    </property>
+</configuration>

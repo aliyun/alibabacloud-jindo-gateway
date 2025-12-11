@@ -1,0 +1,74 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+    <id>dist</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <baseDirectory>jindo-gateway-${project.version}</baseDirectory>
+
+    <fileSets>
+        <!-- Include bin scripts -->
+        <fileSet>
+            <directory>src/main/bin</directory>
+            <outputDirectory>bin</outputDirectory>
+            <fileMode>0755</fileMode>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+        </fileSet>
+
+        <!-- Include configuration files -->
+        <fileSet>
+            <directory>src/main/conf</directory>
+            <outputDirectory>etc/jindo-gateway</outputDirectory>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+
+        <!-- Include documentation -->
+        <fileSet>
+            <directory>.</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>README*</include>
+                <include>LICENSE*</include>
+                <include>NOTICE*</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+    <dependencySets>
+        <!-- Copy project artifact to jindo-gateway lib directory -->
+        <dependencySet>
+            <outputDirectory>lib/jindo-gateway</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <scope>runtime</scope>
+            <includes>
+                <include>com.aliyun.jindodata:*</include>
+            </includes>
+        </dependencySet>
+        
+        <!-- Copy Hadoop dependencies to hadoop lib directory -->
+        <dependencySet>
+            <outputDirectory>lib/hadoop</outputDirectory>
+            <useProjectArtifact>false</useProjectArtifact>
+            <scope>runtime</scope>
+            <includes>
+                <include>org.apache.hadoop:*</include>
+            </includes>
+        </dependencySet>
+        
+        <!-- Copy common dependencies to common lib directory -->
+        <dependencySet>
+            <outputDirectory>lib/common</outputDirectory>
+            <useProjectArtifact>false</useProjectArtifact>
+            <scope>runtime</scope>
+            <excludes>
+                <exclude>org.apache.hadoop:*</exclude>
+            </excludes>
+        </dependencySet>
+    </dependencySets>
+</assembly>

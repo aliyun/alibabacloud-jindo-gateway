@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!--  namenode  -->
+    <property>
+        <name>dfs.namenode.rpc-address</name>
+        <value>0.0.0.0:8020</value>
+    </property>
+
+    <!--  datanode  -->
+    <property>
+        <name>dfs.datanode.address</name>
+        <value>0.0.0.0:50010</value>
+    </property>
+    <property>
+        <name>dfs.datanode.ipc.address</name>
+        <value>0.0.0.0:50020</value>
+    </property>
+
+    <property>
+        <name>dfs.hosts.exclude</name>
+        <value>/tmp/dfs.hosts.exclude.txt</value>
+    </property>
+</configuration>

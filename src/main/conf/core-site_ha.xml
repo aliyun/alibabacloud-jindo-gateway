@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://jindo-gateway-cluster</value>
+    </property>
+
+    <!--  OSS-HDFS config  -->
+    <property>
+        <name>fs.oss.accessKeyId</name>
+        <value>YOUR_ACCESS_KEY_ID</value>
+    </property>
+
+    <property>
+        <name>fs.oss.accessKeySecret</name>
+        <value>YOUR_ACCESS_KEY_SECRET</value>
+    </property>
+
+    <property>
+        <name>fs.oss.endpoint</name>
+        <value>cn-hangzhou.oss-dls.aliyuncs.com</value>
+    </property>
+
+    <property>
+        <name>fs.oss.bucket</name>
+        <value>YOUR_BUCKET_NAME</value>
+    </property>
+</configuration>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!--  namenode  -->
+    <property>
+        <name>dfs.namenode.rpc-address</name>
+        <value>0.0.0.0:8020</value>
+    </property>
+
+    <!--  nameservices  -->
+    <property>
+        <name>dfs.nameservices</name>
+        <value>jindo-gateway-cluster</value>
+    </property>
+    <property>
+        <name>dfs.ha.namenodes.jindo-gateway-cluster</name>
+        <value>nn1,nn2,nn3</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.jindo-gateway-cluster.nn1</name>
+        <value>master-1-1:8020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.jindo-gateway-cluster.nn2</name>
+        <value>master-1-2:8020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.jindo-gateway-cluster.nn3</name>
+        <value>master-1-3:8020</value>
+    </property>
+    <property>
+        <name>dfs.client.failover.proxy.provider.jindo-gateway-cluster</name>
+        <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    </property>
+
+    <!--  datanode  -->
+    <property>
+        <name>dfs.datanode.address</name>
+        <value>0.0.0.0:50010</value>
+    </property>
+    <property>
+        <name>dfs.datanode.ipc.address</name>
+        <value>0.0.0.0:50020</value>
+    </property>
+
+    <property>
+        <name>dfs.hosts.exclude</name>
+        <value>/tmp/dfs.hosts.exclude.txt</value>
+    </property>
+</configuration>
