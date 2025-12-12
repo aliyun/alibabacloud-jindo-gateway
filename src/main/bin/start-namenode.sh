@@ -32,7 +32,7 @@ if ! command -v java &> /dev/null; then
   exit 1
 fi
 
-CLASSPATH="$PROJECT_DIR/share/jindo-gateway-1.0-SNAPSHOT/jindo-gateway-1.0-SNAPSHOT.jar:$CONF_DIR"
+CLASSPATH="$CONF_DIR"
 
 if [ -d "$PROJECT_DIR/lib" ]; then
   for jar in "$PROJECT_DIR"/lib/jindo-gateway/*.jar "$PROJECT_DIR"/lib/hadoop/*.jar "$PROJECT_DIR"/lib/common/*.jar; do
