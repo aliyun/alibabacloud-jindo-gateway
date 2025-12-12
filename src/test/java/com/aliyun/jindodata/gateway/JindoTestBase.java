@@ -280,6 +280,7 @@ public class JindoTestBase {
     protected FileSystem getFileSystemAsAdmin() throws IOException {
         UserGroupInformation appenduser =
                 UserGroupInformation.createUserForTesting("admin", new String[]{"supergroup"});
-        return getFileSystemAs(appenduser, BASE_CONF);
+        Configuration conf = new Configuration(BASE_CONF);
+        return getFileSystemAs(appenduser, conf);
     }
 }
